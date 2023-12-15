@@ -1,0 +1,21 @@
+name: Terraform Validate
+
+on:
+  push:
+    branches: ["master", "main" ]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  terraform-validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v4
+
+      # Checks that all Terraform configuration files adhere to a canonical format
+      - name: Terraform Format
+        run: terraform fmt -check
+
+      
+
