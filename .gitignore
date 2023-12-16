@@ -1,5 +1,10 @@
-*.terraform
-.terraform.lock.hcl
-.DS_Store
-.terraform/providers/registry.terraform.io/hashicorp/aws/5.31.0/darwin_amd64/terraform-provider-aws_v5.31.0_x5
-terraform-provider-aws_v5.31.0_x5 
+# Local .terraform directories
+**/.terraform/*
+
+# .tfstate files
+*.tfstate
+*.tfstate.*
+
+# Crash log files
+crash.log
+crash.*.log
