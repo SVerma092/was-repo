@@ -8,3 +8,6 @@
 # Crash log files
 crash.log
 crash.*.log
+
+
+terraform/core/.terraform/providers/registry.terraform.io/hashicorp/aws/5.31.0/darwin_amd64/terraform-provider-aws_v5.31.0_x5
