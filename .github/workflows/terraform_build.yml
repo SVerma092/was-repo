@@ -1,0 +1,19 @@
+name: Terraform Build
+on:
+  push:
+    branches:
+      - dev
+      - main
+  pull_request: null
+  workflow_dispatch: null
+jobs:
+  terraform-validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Terraform Plan
+        run: terraform plan -input=false
+      - name: Terraform Apply
+        if: github.ref == 'refs/heads/"main"' && github.event_name == 'push'
+        run: terraform apply -auto-approve -input=false
